@@ -1,11 +1,13 @@
 {{config(materialized = 'table')}}
 
 SELECT 
-    --nb_products_sold
-    product_name,
-    count(*) as nb_products_sold,
+    
+    category, 
+    subcategory,
+    --subcategory_sales_count
+    count(*) as subcategory_sales_count,
 
-    --nb_customers_by_products
+    --nb_customers_by_subcategory
     count(distinct customer_id) as nb_customers,
 
     --nb_transactions
@@ -20,14 +22,13 @@ SELECT
     --nb_refunded_sales
     COUNTIF(status = 'refunded') as nb_refunded_sales,
 
-    --refunded_products_rate
+    --refunded_subcategory_rate
     ROUND(COUNTIF(status = 'refunded') *  100 / NULLIF(COUNT(*),0),2)  AS refunded_rate,
+
 
     sale_date
 
-FROM {{ref("tables_join")}} 
+FROM  {{ref("tables_join")}} 
 WHERE status  in ('completed','exchanged', 'refunded')
-GROUP BY sale_date, product_name
-ORDER BY sale_date, product_name
-
-
+GROUP BY sale_date, category, subcategory
+ORDER BY sale_date, category, subcategory
