@@ -2,8 +2,8 @@
 
 SELECT 
     
-    category, 
-    subcategory,
+    product_category, 
+    product_subcategory,
     --subcategory_sales_count
     count(*) as subcategory_sales_count,
 
@@ -30,5 +30,5 @@ SELECT
 
 FROM  {{ref("tables_join")}} 
 WHERE status  in ('completed','exchanged', 'refunded')
-GROUP BY sale_date, category, subcategory
-ORDER BY sale_date, category, subcategory
+GROUP BY sale_date, product_category, product_subcategory
+ORDER BY sale_date, product_category, product_subcategory

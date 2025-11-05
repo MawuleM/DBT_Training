@@ -2,8 +2,8 @@
 
 SELECT 
     store_id,
-    region,
-    city,
+    store_region,
+    store_city,
   
     --nb_transactions
     count(distinct concat(customer_id,'_', store_id,'_',sale_date))as nb_transactions,
@@ -15,5 +15,5 @@ SELECT
 
 FROM {{ref ("tables_join")}}
 WHERE status in ('completed','exchanged')
-GROUP BY sale_date,region,city, store_id
+GROUP BY sale_date,store_region, store_city, store_id
 ORDER BY sale_date, turnover DESC

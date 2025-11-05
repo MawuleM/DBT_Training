@@ -3,6 +3,8 @@
 SELECT 
     --nb_products_sold
     product_name,
+    product_category,
+    product_subcategory,
     count(*) as nb_products_sold,
 
     --nb_customers_by_products
@@ -27,7 +29,6 @@ SELECT
 
 FROM {{ref("tables_join")}} 
 WHERE status  in ('completed','exchanged', 'refunded')
-GROUP BY sale_date, product_name
+GROUP BY sale_date, product_name,product_category,product_subcategory
 ORDER BY sale_date, product_name
-
 
