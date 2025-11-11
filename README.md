@@ -1,15 +1,44 @@
-Welcome to your new dbt project!
+ANALYSE DE VENTES - DBT,BIG QUERY, LOOKER STUDIO
 
-### Using the starter project
+Transformation de données brutes des ventes détails en insights exploitables pour suivre la performance et optimiser les décisions.
 
-Try running the following commands:
-- dbt run
-- dbt test
+-> Objectif
 
+Permettre aux équipes marketing et data d’analyser facilement les ventes, le panier moyen et le comportement des clients.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+-> Technologies utilisées
+
+-dbt : Transformations SQL
+
+-BigQuery : Data Warehouse
+
+-Looker Studio : Visualisation
+
+-> Structure
+
+models/
+  
+  staging/          (Nettoyage et standardisation des données brutes)
+ 
+  intermediate/     (Transformations et enrichissements)
+ 
+  marts/            (Tables finales pour le dashboard)
+
+-> Métriques
+
+-Chiffre d’affaires (CA)
+
+-Nombre de produits vendus
+
+-Nombre de clients
+
+-Nombre de transactions
+
+-Panier moyen
+
+-Taux de remboursement
+
+->Dashboard
+
+https://lookerstudio.google.com/reporting/a1c9a99d-a5a1-42b7-b2bb-184ed714c064
+
