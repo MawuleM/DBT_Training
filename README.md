@@ -42,3 +42,9 @@ models/
 
 https://lookerstudio.google.com/reporting/a1c9a99d-a5a1-42b7-b2bb-184ed714c064
 
+-> Contribution 
+
+Contribuer
+
+Les contributions sont bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+
